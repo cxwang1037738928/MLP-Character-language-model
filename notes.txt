@@ -1,0 +1,5 @@
+1. hpreact should be roughly gaussian(0 mean, 1 std), don't want too small or too large values. Thus, we can just standardize them to be gaussian.
+But only at initialization. Don't force them to always be gaussian. Want neural net to move them around.
+Usually, add batch normalization layers after linear layers to control batch normalization throughout the neural net.
+2. Batch normalization layers will remove the biases of all the layers before it. i.e setting those  biases b1 ... bn's grad to 0.
+3. Place batch normalization between linear layer and non-linearity(e.g tanh)
